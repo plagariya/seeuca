@@ -1,24 +1,44 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import TheHeader from './components/TheHeader';
+import TheFooter from './components/TheFooter';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
+import ServicesUs from './pages/ServicesUs';
+import Career from './pages/Career';
+import TheLogin from './components/TheLogin';
 
 function App() {
+  const loginStatus = localStorage.getItem('loginStatus');
+  console.log(loginStatus);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        {loginStatus ? (
+          <>
+            <TheHeader />
+            <Routes>
+              <Route
+                path="/"
+                element={<Home />}
+              />
+              <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/service-us" element={<ServicesUs />} />
+              <Route path="/career" element={<Career />} />
+              <Route path="/contact" element={<ContactUs />} />
+
+
+            </Routes>
+            <TheFooter />
+          </>
+
+        ) : (
+          <TheLogin />
+        )}
+      </div>
+    </Router>
   );
 }
 
