@@ -9,7 +9,7 @@ const TheLogin = ({ setLoggedIn }) => {
     const loginStatus = localStorage.getItem('loginStatus');
     console.log("sdfas", loginStatus);
     if (loginStatus) {
-        window.location.href = '/home';
+        window.location.href = '/';
     }
 
     const handleUsernameChange = (e) => {
@@ -26,7 +26,7 @@ const TheLogin = ({ setLoggedIn }) => {
             // Set isLoggedIn state in the parent component
             localStorage.setItem('loginStatus', true);
             // Redirect to home page on successful login
-            navigate('/home');
+            navigate('/');
         } else {
             // Set isLoggedIn state to false
             localStorage.setItem('loginStatus', false);
@@ -37,23 +37,22 @@ const TheLogin = ({ setLoggedIn }) => {
 
     return (
         <div>
-            <form>
-                <div className=''>
-                    <label>User Name</label>
-                    <br />
-                    <input type="text" value={username} onChange={handleUsernameChange} />
-                </div>
-                <div>
-                    <label>Password</label>
-                    <br />
-                    <input type="password" value={password} onChange={handlePasswordChange} />
-                </div>
-                <div>
+            <form id='Form_main'>
+                <div className='form'>
+                    <div className='user_name'>
+                        <label>User Name</label>
+                        <input type="text" value={username} onChange={handleUsernameChange} />
+                    </div>
+                    <div className='password'>
+                        <label>Password</label>
+                        <input type="password" value={password} onChange={handlePasswordChange} />
+                    </div>
                     {error && <p style={{ color: 'red' }}>{error}</p>}
-
-                    <button type="button" onClick={handleLogin}>
-                        Login
-                    </button>
+                    <div>
+                        <button type="button" onClick={handleLogin}>
+                            Login
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
