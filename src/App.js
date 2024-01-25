@@ -12,11 +12,11 @@ import TheLogin from './components/TheLogin';
 
 function App() {
   const loginStatus = localStorage.getItem('loginStatus');
-  console.log(loginStatus);
+  console.log("FromApp.js",loginStatus);
   return (
     <Router>
       <div className="App">
-        {loginStatus ? (
+        {loginStatus === 'true' ? (
           <>
             <TheHeader />
             <Routes>

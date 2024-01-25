@@ -7,10 +7,11 @@ const TheLogin = ({ setLoggedIn }) => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const loginStatus = localStorage.getItem('loginStatus');
-    console.log("sdfas", loginStatus);
-    if (loginStatus) {
-        window.location.href = '/';
-    }
+    console.log("Login stutas", loginStatus );
+    // if (loginStatus ===  false) {
+    //     window.location.href = '/';
+    // }
+
 
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
@@ -21,16 +22,12 @@ const TheLogin = ({ setLoggedIn }) => {
     };
 
     const handleLogin = () => {
-        // Your login logic here
+
         if (username === 'Pravin' && password === 'Pravin@123') {
-            // Set isLoggedIn state in the parent component
             localStorage.setItem('loginStatus', true);
-            // Redirect to home page on successful login
             navigate('/');
         } else {
-            // Set isLoggedIn state to false
             localStorage.setItem('loginStatus', false);
-            // Set error message for incorrect username or password
             setError('Incorrect username or password');
         }
     };
@@ -43,6 +40,7 @@ const TheLogin = ({ setLoggedIn }) => {
                         <label>User Name</label>
                         <input type="text" value={username} onChange={handleUsernameChange} />
                     </div>
+                    
                     <div className='password'>
                         <label>Password</label>
                         <input type="password" value={password} onChange={handlePasswordChange} />

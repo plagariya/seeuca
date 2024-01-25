@@ -105,7 +105,7 @@ function Service() {
                     <h2 className='heading'>Services</h2>
                     <div className='card_main'>
                         {ServiceData && ServiceData.map((res, index) => (
-                            <div className='card'>
+                            <div className='card' key={index}>
                                 <span dangerouslySetInnerHTML={{ __html: res.svg }}>
                                 </span>
                                 <h3>{res.label}</h3>
