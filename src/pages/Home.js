@@ -97,6 +97,7 @@ function AboutCompany() {
 function Service() {
     const ServiceData = HomeAPI.services;
     console.log("services", ServiceData);
+
     return (
         <section id='service'>
             <div className='container mx-auto'>
