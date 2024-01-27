@@ -21,6 +21,47 @@
   @apply w-6 h-6 text-white mx-auto;
 }
 
+/* Animation banner */
+
+.Animation_main{
+  @apply fixed z-0 w-screen top-0 right-0 animate-banner h-screen;
+}
+
+.Animation_bg{
+  @apply absolute z-0 drop-shadow-2xl;
+}
+
+#Dot_1{
+  @apply top-[12%] left-[4%] scale-[1.5];
+}
+#Dot_2{
+  @apply top-[23%] right-[10%] scale-[1.2];
+}
+#Dot_3{
+  @apply top-[70%] right-[80%] scale-[1.7];
+}
+#Dot_4{
+  @apply top-[80%] right-[10%] scale-[2];
+}
+#Dot_5{
+  @apply top-[50%] right-[30%] scale-[1.1];
+}
+#Dot_6{
+  @apply top-[38%] right-[50%] scale-[1.8];
+}
+#Dot_7{
+  @apply top-[80%] right-[45%] scale-[1];
+}
+#Dot_8{
+  @apply top-[13%] right-[30%] scale-[0.9];
+}
+#Dot_9{
+  @apply top-[20%] right-[68%] scale-[0.9];
+}
+#Dot_10{
+  @apply top-[68%] right-[60%] scale-[0.5];
+}
+
 /* about_company */
 
 #about_company {
@@ -29,7 +70,7 @@
 #about_company .about_company_text {
   @apply rounded-ss-[40px] rounded-ee-[40px] bg-white shadow-2xl w-3/5 p-8 mb-16 text-start;
 }
-.heading {
+#about_company .heading {
   @apply text-pOrange font-bold mb-8 text-3xl text-start;
 }
 #about_company .about_company_text p {
@@ -47,7 +88,7 @@
 }
 
 #service .card {
-  @apply backdrop-blur-sm bg-white/30 rounded-2xl p-5;
+  @apply backdrop-blur-sm bg-white/30 rounded-2xl p-5 hover:bg-white hover:shadow-2xl;
 }
 
 #service .card span {
@@ -60,4 +101,10 @@
 
 #service .card p {
   @apply text-start text-base text-liteBlack mb-2;
+}
+
+/* project */
+
+#project{
+  @apply mt-28; 
 }

@@ -43,6 +43,18 @@ module.exports = {
       },
       transitionDuration: {
         '4': '0.4s',
+      },
+      keyframes: {
+        banner: {
+          '0%': { transform: 'translate(0x, 0)', opacity: '0.8' },
+          '25%': { transform: 'translate(0x, 40px)', opacity: '1' },
+          '50%': { transform: 'translate(40px, 40px)', opacity: '0.8' },
+          '75%': { transform: 'translate(40px, 0)', opacity: '1' },
+          '100%': { transform: 'translate(0, 0)', opacity: '0.8' },
+        }
+      },
+      animation: {
+        banner: 'banner 10s linear infinite',
       }
     },
   },
